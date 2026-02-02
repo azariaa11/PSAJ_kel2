@@ -16,7 +16,7 @@
     <!-- Bagian Navigasi -->
 <header>
   <nav>
-    <div class="logo">kelompok<span>Empat</span></div>
+    <div class="logo">kelompok<span>Dua</span></div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#kelompok">Kelompok</a></li>
@@ -55,7 +55,7 @@
         </div>
       </a>
 
-      <a href="porto-anggota2.html" class="kelompok-card">
+      <a href="https://mario3r0r.github.io/myporto/" class="kelompok-card">
         <div class="card-img">mylogo
           <img src="img/mario.jpg" alt="Anggota 2" />
         </div>
@@ -65,7 +65,7 @@
         </div>
       </a>
 
-      <a href="porto-anggota3.html" class="kelompok-card">
+      <a href="https://indahaftr.github.io/MyPortfolio/" class="kelompok-card">
         <div class="card-img">
           <img src="img/indah.jpg" alt="Anggota 3" />
         </div>
@@ -85,7 +85,7 @@
         </div>
       </a>
 
-      <a href="porto-anggota3.html" class="kelompok-card">
+      <a href="https://aldinyok77.github.io/aldidarderdor12/" class="kelompok-card">
         <div class="card-img">
           <img src="img/aldi.jpg" alt="Anggota 5" />
         </div>
@@ -95,7 +95,7 @@
         </div>
       </a>
 
-      <a href="porto-anggota3.html" class="kelompok-card">
+      <a href="https://satrya258.github.io/portofolio_satrya/" class="kelompok-card">
         <div class="card-img">
           <img src="img/satrya.jpg" alt="Anggota 6" />
         </div>
