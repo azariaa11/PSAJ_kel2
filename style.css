@@ -1,232 +1,217 @@
 /* =========================================
-   1. RESET & DASAR (BASE STYLES)
+   1. PENGATURAN DASAR & VARIABEL WARNA
    ========================================= */
-
-* {
-    margin: 0; /* Menghapus margin bawaan browser */
-    padding: 0; /* Menghapus padding bawaan browser */
-    box-sizing: border-box; /* Memastikan padding tidak merusak ukuran elemen */
+:root {
+    --kitty-pink: #ffb7c5;       /* Pink lembut khas Hello Kitty */
+    --kuromi-purple: #9b59b6;    /* Ungu khas Kuromi */
+    --kuromi-dark: #2d3436;      /* Hitam lembut untuk kontras */
+    --white: #ffffff;            /* Putih bersih */
+    --soft-bg: #fff0f3;          /* Latar belakang pink sangat muda */
+    --shadow: rgba(255, 182, 193, 0.4); /* Bayangan warna pink */
 }
 
-html {
-    scroll-behavior: smooth; /* Membuat efek scroll halus saat klik menu navigasi */
+* {
+    margin: 0;                   /* Reset margin bawaan */
+    padding: 0;                  /* Reset padding bawaan */
+    box-sizing: border-box;      /* Perhitungan ukuran elemen tetap konsisten */
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins sesuai HTML kamu */
-    line-height: 1.6; /* Mengatur jarak antar baris teks agar enak dibaca */
-    color: #444; /* Warna teks utama (abu-abu gelap agar tidak kaku) */
-    background-color: #fff5f7; /* Latar belakang website pink sangat muda */
-}
-
-a {
-    text-decoration: none; /* Menghapus garis bawah pada link */
-    color: inherit; /* Warna link mengikuti warna teks di sekitarnya */
-}
-
-li {
-    list-style: none; /* Menghapus titik (bullet) pada daftar menu */
+    font-family: 'Poppins', sans-serif; /* Font modern dan bersih */
+    background-color: var(--soft-bg);  /* Warna dasar website */
+    color: var(--kuromi-dark);         /* Warna teks utama */
+    overflow-x: hidden;                /* Mencegah scroll ke samping */
 }
 
 /* =========================================
-   2. NAVIGASI (HEADER)
+   2. ANIMASI CUTE
    ========================================= */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   3. NAVIGASI (HEADER)
+   ========================================= */
 header {
-    background-color: rgba(255, 255, 255, 0.95); /* Putih transparan agar modern */
-    padding: 1rem 5%; /* Jarak atas-bawah 1rem, kiri-kanan 5% */
-    position: fixed; /* Membuat menu tetap di atas saat di-scroll */
-    width: 100%; /* Memenuhi lebar layar */
-    top: 0;
-    z-index: 1000; /* Memastikan menu berada di lapisan paling atas */
-    box-shadow: 0 2px 10px rgba(255, 182, 193, 0.3); /* Bayangan lembut warna pink */
+    background-color: rgba(255, 255, 255, 0.9); /* Transparan sedikit */
+    padding: 15px 5%;            /* Jarak dalam navigasi */
+    position: fixed;             /* Menempel di atas saat scroll */
+    width: 100%;                 /* Lebar penuh */
+    top: 0;                      /* Posisi paling atas */
+    z-index: 1000;               /* Di atas elemen lain */
+    box-shadow: 0 4px 15px var(--shadow); /* Efek bayangan pink */
+    backdrop-filter: blur(5px);  /* Efek kaca buram di belakang nav */
 }
 
 nav {
-    display: flex; /* Mengaktifkan mode Flexbox */
-    justify-content: space-between; /* Menaruh logo di kiri, menu di kanan */
-    align-items: center; /* Menyejajarkan konten secara vertikal */
+    display: flex;               /* Susunan sejajar horizontal */
+    justify-content: space-between; /* Logo kiri, menu kanan */
+    align-items: center;         /* Tengah secara vertikal */
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ff8fa3; /* Warna pink utama */
+    font-size: 1.5rem;           /* Ukuran font logo */
+    font-weight: 600;            /* Ketebalan font logo */
+    color: var(--kuromi-purple); /* Warna logo bertema Kuromi */
 }
 
 .logo span {
-    color: #ff4d6d; /* Variasi warna pink lebih tua untuk teks "Dua" */
+    color: var(--kitty-pink);    /* Bagian logo bertema Kitty */
 }
 
 .nav-links {
-    display: flex; /* Membuat menu berjejer ke samping */
-    gap: 25px; /* Memberi jarak antar menu */
+    display: flex;               /* List menu sejajar */
+    gap: 30px;                   /* Jarak antar menu */
 }
 
 .nav-links a {
-    font-weight: 400;
-    transition: 0.3s; /* Efek transisi halus saat kursor menyentuh menu */
+    text-decoration: none;       /* Hapus garis bawah link */
+    color: var(--kuromi-dark);   /* Warna teks menu */
+    font-weight: 400;            /* Ketebalan teks */
+    transition: 0.3s;            /* Durasi animasi hover */
 }
 
 .nav-links a:hover {
-    color: #ff4d6d; /* Warna berubah saat kursor menyentuh (hover) */
+    color: var(--kitty-pink);    /* Berubah pink saat disentuh kursor */
+    letter-spacing: 1px;         /* Efek melebar sedikit saat hover */
 }
 
 /* =========================================
-   3. HERO SECTION (BAGIAN ATAS)
+   4. HERO SECTION (BERANDA)
    ========================================= */
-
 .hero-kelompok {
-    height: 100vh; /* Tinggi satu layar penuh */
-    background: linear-gradient(rgba(255, 192, 203, 0.6), rgba(255, 192, 203, 0.6)), 
-                url('https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=2000') center/cover; 
-    /* Gradient pink di atas gambar background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    height: 100vh;               /* Tinggi layar penuh */
+    background: linear-gradient(135deg, var(--kitty-pink), var(--white)); /* Gradasi warna */
+    display: flex;               /* Gunakan flexbox */
+    justify-content: center;     /* Tengah secara horizontal */
+    align-items: center;         /* Tengah secara vertikal */
+    text-align: center;          /* Teks rata tengah */
+    padding-top: 80px;           /* Kompensasi tinggi navbar */
 }
 
 .hero-overlay h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan teks agar terbaca */
+    font-size: 4rem;             /* Ukuran judul besar */
+    color: var(--white);         /* Warna teks putih */
+    text-shadow: 3px 3px var(--kuromi-purple); /* Bayangan teks Kuromi style */
+    animation: float 3s ease-in-out infinite; /* Animasi melayang */
 }
 
 .btn-cek {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #ff4d6d; /* Tombol warna pink cerah */
-    color: white;
-    border-radius: 50px; /* Membuat tombol membulat (pill-shaped) */
-    font-weight: 600;
-    transition: 0.3s;
-    border: 2px solid #ff4d6d;
+    display: inline-block;       /* Agar padding bekerja pada link */
+    padding: 12px 35px;          /* Jarak dalam tombol */
+    background-color: var(--kuromi-purple); /* Warna tombol */
+    color: white;                /* Warna teks tombol */
+    border-radius: 30px;         /* Sudut membulat */
+    text-decoration: none;       /* Hapus garis bawah */
+    margin-top: 20px;            /* Jarak atas */
+    transition: 0.3s;            /* Efek halus */
+    border: none;                /* Hapus garis tepi */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan tombol */
 }
 
 .btn-cek:hover {
-    background-color: white;
-    color: #ff4d6d;
-    transform: translateY(-3px); /* Efek tombol sedikit naik saat disentuh */
+    transform: scale(1.1) rotate(-3deg); /* Membesar dan miring sedikit saat hover */
+    background-color: var(--kitty-pink); /* Berubah ke warna Kitty */
 }
 
 /* =========================================
-   4. KONTEN UMUM (CONTAINER)
+   5. ANGGOTA KELOMPOK (CARDS)
    ========================================= */
-
 .section-container {
-    padding: 100px 8%; /* Jarak antar section */
+    padding: 80px 10%;           /* Jarak antar section */
 }
-
-.bg-light { background-color: #fff9fa; } /* Pink sangat tipis */
-.bg-white { background-color: #ffffff; }
 
 .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #ff4d6d;
-    position: relative;
+    text-align: center;          /* Judul rata tengah */
+    font-size: 2.5rem;           /* Ukuran judul */
+    margin-bottom: 50px;         /* Jarak bawah judul */
+    color: var(--kuromi-dark);   /* Warna judul */
 }
-
-/* Garis kecil di bawah judul */
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #ff8fa3;
-    margin: 10px auto;
-    border-radius: 2px;
-}
-
-/* =========================================
-   5. GRID ANGGOTA (CARD DESIGN)
-   ========================================= */
 
 .kelompok-grid {
-    display: grid; /* Mengaktifkan CSS Grid */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Membuat kartu sejajar & responsif */
-    gap: 30px; /* Jarak antar kartu */
+    display: grid;               /* Gunakan CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif otomatis */
+    gap: 30px;                   /* Jarak antar kartu */
 }
 
 .kelompok-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden; /* Memastikan gambar tidak keluar dari sudut membulat */
-    box-shadow: 0 10px 20px rgba(255, 143, 163, 0.1);
-    transition: 0.3s;
-    text-align: center;
+    background: var(--white);    /* Warna dasar kartu */
+    border-radius: 20px;         /* Sudut kartu membulat */
+    overflow: hidden;            /* Potong gambar jika keluar kartu */
+    box-shadow: 0 10px 20px var(--shadow); /* Bayangan lembut */
+    text-decoration: none;       /* Hapus dekorasi link */
+    transition: 0.4s ease;       /* Efek transisi halus */
+    border: 2px solid transparent; /* Border awal transparan */
+    animation: fadeIn 1s ease forwards; /* Efek muncul pelan */
 }
 
 .kelompok-card:hover {
-    transform: scale(1.05); /* Memperbesar sedikit kartu saat hover */
+    transform: translateY(-10px); /* Kartu naik saat hover */
+    border-color: var(--kitty-pink); /* Border muncul saat hover */
 }
 
 .card-img img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover; /* Gambar tetap proporsional meskipun dipotong */
+    width: 100%;                 /* Gambar selebar kartu */
+    height: 250px;               /* Tinggi gambar tetap */
+    object-fit: cover;           /* Gambar tidak penyok */
 }
 
 .card-info {
-    padding: 20px;
+    padding: 20px;               /* Jarak dalam teks kartu */
+    text-align: center;          /* Teks tengah */
 }
 
 .card-info h3 {
-    color: #ff4d6d;
-    margin-bottom: 5px;
+    font-size: 1.1rem;           /* Ukuran nama */
+    color: var(--kuromi-dark);   /* Warna nama */
+}
+
+.card-info p {
+    color: var(--kuromi-purple); /* Warna nomor absen */
+    font-weight: 600;            /* Tebal font */
 }
 
 /* =========================================
-   6. LAPORAN & VIDEO (IFRAME)
+   6. LAPORAN & VIDEO (MODERN LOOK)
    ========================================= */
-
 .content-wrapper, .video-wrapper {
-    max-width: 900px; /* Membatasi lebar agar tidak terlalu melar di laptop */
-    margin: 0 auto; /* Tengah secara horizontal */
+    background: white;           /* Latar putih */
+    padding: 20px;               /* Padding luar iframe */
+    border-radius: 20px;         /* Sudut membulat */
+    box-shadow: 0 10px 30px var(--shadow); /* Bayangan */
+    margin-bottom: 30px;         /* Jarak bawah */
 }
 
 .pdf-container, .video-container {
-    width: 100%;
-    height: 500px; /* Tinggi tampilan dokumen/video */
-    border-radius: 15px;
-    overflow: hidden;
-    border: 5px solid #ffecf0;
-    margin-bottom: 20px;
-}
-
-.content-desc, .video-desc {
-    text-align: center;
+    height: 500px;               /* Tinggi area konten */
+    border-radius: 15px;         /* Sudut iframe membulat */
+    overflow: hidden;            /* Sembunyikan sudut tajam */
 }
 
 /* =========================================
    7. FOOTER
    ========================================= */
-
 footer {
-    background-color: #ff4d6d;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    margin-top: 50px;
+    background-color: var(--kuromi-dark); /* Hitam Kuromi */
+    color: white;                /* Teks putih */
+    padding: 40px;               /* Jarak dalam */
+    text-align: center;          /* Teks tengah */
+    border-top: 5px solid var(--kitty-pink); /* Garis atas warna pink */
 }
 
 /* =========================================
-   8. RESPONSIVE (UNTUK HP)
+   8. RESPONSIVE (TAMPILAN MOBILE)
    ========================================= */
-
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Menyembunyikan menu di HP (bisa dikembangkan dengan hamburger menu) */
-    }
-    
-    .hero-overlay h1 {
-        font-size: 2.5rem;
-    }
-    
-    .section-container {
-        padding: 60px 5%;
-    }
+    .nav-links { display: none; } /* Sembunyikan nav di HP */
+    .hero-overlay h1 { font-size: 2.5rem; } /* Kecilkan teks di HP */
+    .pdf-container, .video-container { height: 300px; } /* Kecilkan iframe di HP */
 }
