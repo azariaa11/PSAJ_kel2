@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -47,7 +48,7 @@
 
       <a href="https://azariaa11.github.io/myporto001" class="kelompok-card">
         <div class="card-img">
-          <img src="img/azaria.PNG" alt="Anggota 1" />
+          <img src="azaria.PNG" alt="Anggota 1" />
         </div>
         <div class="card-info">
           <h3>Azaria Davita Hanna</h3>
@@ -57,7 +58,7 @@
 
       <a href="https://mario3r0r.github.io/myporto/" class="kelompok-card">
         <div class="card-img">
-          <img src="img/mario.jpg" alt="Anggota 2" />
+          <img src="mario.jpg" alt="Anggota 2" />
         </div>
         <div class="card-info">
           <h3>Mario Adiananda Nugroho</h3>
@@ -67,7 +68,7 @@
 
       <a href="https://indahaftr.github.io/MyPortfolio/" class="kelompok-card">
         <div class="card-img">
-          <img src="img/indah.jpg" alt="Anggota 3" />
+          <img src="indah.jpg" alt="Anggota 3" />
         </div>
         <div class="card-info">
           <h3>Indah Ayuningfitri</h3>
@@ -77,7 +78,7 @@
 
        <a href="porto-anggota3.html" class="kelompok-card">
         <div class="card-img">
-          <img src="img/mylogo.png" alt="Anggota 4" />
+          <img src="rasya.jpg" alt="Anggota 4" />
         </div>
         <div class="card-info">
           <h3>Mochamad Rasya Ramadan</h3>
@@ -87,7 +88,7 @@
 
       <a href="https://aldinyok77.github.io/aldidarderdor12/" class="kelompok-card">
         <div class="card-img">
-          <img src="img/aldi.jpg" alt="Anggota 5" />
+          <img src="aldi.jpg" alt="Anggota 5" />
         </div>
         <div class="card-info">
           <h3>Mochamad Aldi</h3>
@@ -97,7 +98,7 @@
 
       <a href="https://satrya258.github.io/portofolio_satrya/" class="kelompok-card">
         <div class="card-img">
-          <img src="img/satrya.jpg" alt="Anggota 6" />
+          <img src="satrya.jpg" alt="Anggota 6" />
         </div>
         <div class="card-info">
           <h3> Satrya Wijaya Utama</h3>
