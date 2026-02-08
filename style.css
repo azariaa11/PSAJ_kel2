@@ -220,3 +220,14 @@ footer {
     border-top-left-radius: 50% 20px;
     border-top-right-radius: 50% 20px;
 }
+
+/* FIX KHUSUS PDF SAJA - TIDAK SENTUH FOTO */
+#laporan .pdf-container {
+    height: 600px; /* PDF besar tapi tidak narik layout */
+}
+
+#laporan .pdf-container iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
