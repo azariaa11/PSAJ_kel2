@@ -1,158 +1,222 @@
+/* =========================================
+   1. VARIABEL & SETUP (TEMA SANRIO)
+   ========================================= */
 :root {
-  --kitty-pink: #ffb7c5;
-  --kuromi-purple: #9b59b6;
-  --dark-text: #333;
+    --kitty-pink: #ffb7c5;
+    --kuromi-purple: #9b59b6;
+    --white-soft: #ffffff;
+    --dark-text: #333;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-image: url('https://www.transparenttextures.com/patterns/pinstripe-light.png'),
-    linear-gradient(to bottom, #fff0f3, #ffffff);
-  color: var(--dark-text);
-  scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://www.transparenttextures.com/patterns/pinstripe-light.png'),
+                      linear-gradient(to bottom, #fff0f3, #ffffff);
+    background-color: #fff0f3;
+    color: var(--dark-text);
+    scroll-behavior: smooth;
 }
 
-/* ================= CONTAINER (INI WAJIB ADA) ================= */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ================= HEADER ================= */
+/* =========================================
+   2. NAVIGASI
+   ========================================= */
 header {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 15px 5%;
-  position: fixed;
-  width: 90%;
-  top: 20px;
-  left: 5%;
-  border-radius: 50px;
-  z-index: 1000;
-  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
-  border: 2px solid var(--kitty-pink);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 5%;
+    position: fixed;
+    width: 90%;
+    top: 20px;
+    left: 5%;
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+    border: 2px solid var(--kitty-pink);
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--kuromi-purple);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--kuromi-purple);
 }
 
-.logo span {
-  color: var(--kitty-pink);
-}
+.logo span { color: var(--kitty-pink); }
 
 .nav-links {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: var(--dark-text);
-  font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-/* ================= HERO ================= */
+.nav-links a:hover {
+    color: var(--kitty-pink);
+    transform: scale(1.1);
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 .hero-kelompok {
-  height: 100vh;
-  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-    url('https://wallpapercave.com/wp/wp11893963.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+                url('https://wallpapercave.com/wp/wp11893963.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-overlay {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 40px;
-  border-radius: 30px;
-  border: 3px dashed var(--kitty-pink);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 30px;
+    border: 3px dashed var(--kitty-pink);
+    backdrop-filter: blur(5px);
 }
 
 .hero-overlay h1 {
-  font-size: 3.5rem;
-  color: var(--kuromi-purple);
+    font-size: 3.5rem;
+    color: var(--kuromi-purple);
+    text-shadow: 2px 2px white;
+    margin: 10px 0;
 }
 
-/* ================= BUTTON ================= */
 .btn-cek {
-  padding: 12px 30px;
-  background: var(--kitty-pink);
-  color: white;
-  border-radius: 50px;
-  font-weight: 600;
-  display: inline-block;
+    padding: 12px 30px;
+    background: var(--kitty-pink);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px var(--kitty-pink);
 }
 
 .btn-cek:hover {
-  background: var(--kuromi-purple);
-  animation: bounce 0.4s;
+    background: var(--kuromi-purple);
 }
 
-/* ================= SECTION ================= */
+/* =========================================
+   4. SECTION UMUM
+   ========================================= */
 .section-container {
-  padding: 140px 8% 100px;
+    padding: 100px 8%;
 }
 
-/* ================= PDF & VIDEO ================= */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--kuromi-purple);
+    background: white;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--kitty-pink);
+}
+
+/* =========================================
+   5. KARTU ANGGOTA (FOTO AMAN)
+   ========================================= */
+.kelompok-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.kelompok-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid #eee;
+    transition: 0.4s;
+}
+
+.kelompok-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--kitty-pink);
+}
+
+.card-img img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-info h3 {
+    color: var(--kuromi-purple);
+}
+
+/* =========================================
+   6. LAPORAN & VIDEO BOX
+   ========================================= */
 .content-wrapper,
 .video-wrapper {
-  background: white;
-  padding: 25px;
-  border-radius: 30px;
-  border: 3px solid var(--kitty-pink);
-  box-shadow: 10px 10px 0 var(--kuromi-purple);
-  margin-bottom: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 30px;
+    border: 3px solid var(--kitty-pink);
+    box-shadow: 10px 10px 0 var(--kuromi-purple);
+    margin-bottom: 40px;
 }
 
-.pdf-container,
+/* =========================================
+   7. FIX PDF (INI SATU-SATUNYA YANG DIUBAH)
+   ========================================= */
+.pdf-container {
+    width: 100%;
+    height: 85vh; /* PDF BESAR */
+    overflow: hidden;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* VIDEO TETAP */
 .video-container {
-  width: 100%;
-  height: 600px;
-  border-radius: 20px;
-  overflow: hidden;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-/* 🔥 INI YANG BIKIN PDF FULL */
-.pdf-container iframe,
-.video-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
-/* ================= FOOTER ================= */
+/* =========================================
+   8. FOOTER
+   ========================================= */
 footer {
-  background: var(--kuromi-purple);
-  color: white;
-  text-align: center;
-  padding: 50px;
-}
-
-/* ================= ANIMASI ================= */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+    background: var(--kuromi-purple);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
 }
